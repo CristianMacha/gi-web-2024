@@ -1,0 +1,18 @@
+---
+import BentoItem from "./BentoItem.astro";
+import BentoItemWithVideo from "./BentoItemWithVideo.astro";
+
+const graniteUrlSource = "https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2Fgranite.jpg?alt=media&token=208a54ad-b320-425c-8d46-ae1f63680a6c";
+const quartzUrlSource = "https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2Fquartz.jpg?alt=media&token=cf65efd2-0117-4116-93d6-e19dffaa1ed0";
+---
+
+<div class="bg-[#b488f1] px-10 py-40">
+    <div class="flex flex-col gap-8">
+        <BentoItemWithVideo />
+        <div class="flex flex-row gap-8">
+            <BentoItem title="Granite" urlSource={graniteUrlSource} />
+            <BentoItem title="Quartz" urlSource={quartzUrlSource} />
+        </div>
+        <BentoItemWithVideo />
+    </div>
+</div>

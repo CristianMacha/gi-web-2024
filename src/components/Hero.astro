@@ -1,0 +1,61 @@
+<div class="bg-[#F3F3E9]">
+    <div class="px-10 py-56">
+        <div class="w-[90wh] text-[#0f1d07]">
+            <h1 class="text-9xl">
+                Kansas expert in stone countertops installation
+            </h1>
+        </div>
+    </div>
+    <div
+        class="h-[150vh] relative"
+        id="hero-container-video-main"
+    >
+        <div class="bg-white rounded-lg h-screen w-full sticky top-0"></div>
+    </div>
+</div>
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#hero-container-video-main", {
+        backgroundColor: "#b488f1",
+        paddingLeft: "0",
+        paddingRight: "0",
+        scrollTrigger: {
+            trigger: "#hero-container-video-main",
+            start: "center center",
+            end: "bottom center",
+            scrub: 1,
+        },
+    });
+
+    gsap.set("#hero-container-video-main", {
+        paddingLeft: "40px",
+        paddingRight: "40px",
+    });
+
+    gsap.to("#hero-container-video-main", {
+        paddingLeft: "0px",
+        paddingRight: "0px",
+        scrollTrigger: {
+            trigger: "#hero-container-video-main",
+            start: "top center",
+            end: "center center",
+            scrub: 1,
+        },
+    });
+
+    gsap.to("#hero-container-video-main", {
+        paddingLeft: "40px",
+        paddingRight: "40px",
+        scrollTrigger: {
+            trigger: "#hero-container-video-main",
+            start: "center center",
+            end: "bottom center",
+            scrub: 1,
+            markers: true,
+        },
+    });
+</script>

@@ -1,0 +1,153 @@
+---
+import { Image } from "astro:assets";
+---
+
+<title>Contact | Granite Impressions</title>
+<div
+  class="relative w-auto h-screen items-start justify-start"
+  style={{
+    backgroundImage: `url('/svg/contact-01.svg')`,
+    backgroundSize: "100%",
+    backgroundPosition: "center",
+  }}
+>
+  <div
+    id="hero-text"
+    class="absolute inset-0 flex flex-col justify-center items-start text-start p-4 px-48 bg-opacity-10 bg-black transition-all duration-500"
+  >
+    <h3 class="text-7xl lg:text-9xl text-white font-bold leading-tight transition-all duration-500">
+      We've got a great feeling about this
+    </h3>
+    <div
+      class="mt-4 flex items-center bg-black text-white hover:bg-[#B488F1] hover:text-black px-6 py-2 rounded-full cursor-pointer hover:animate-bounce"
+      onclick="togglePopup()"
+    >
+      <span class="mr-2">Let's Get Started</span>
+      <img
+        src="https://img.icons8.com/ios-filled/50/arrow.png"
+        alt="arrow"
+        class="arrow-icon w-6 h-6 md:w-8 md:h-8 rounded-full p-2 transition-all duration-500"
+      />
+    </div>
+  </div>
+</div>
+<div class="bg-gradient-to-b from-[#8CACA7] to-[#101e08] text-[#101e08] text-xl flex flex-col gap-8">
+  <div class="flex flex-row gap-8 px-10 pt-16">
+    <div>
+      <h4 class="font-medium">Speak to us</h4>
+      <p class="opacity-50">+1 913 475 3262</p>
+      <p class="opacity-50">quotes@granite-impressions.com</p>
+    </div>
+    <div>
+      <h4 class="font-medium">Kansas</h4>
+      <p class="opacity-50">15350 S. KEELER ST. UNIT C OLATHE, KS 66062</p>
+    </div>
+  </div>
+  <div class="border-t">
+    <small class="px-10 pt-16">Granite Impressions © 2024</small>
+  </div>
+</div>
+
+<!-- Popup Form -->
+<div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-8 rounded-lg shadow-lg relative w-96">
+    <button class="absolute top-2 right-2 text-black" onclick="togglePopup()">X</button>
+    <h2 class="text-2xl mb-4">Contact Us</h2>
+    <form>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
+          type="text"
+          placeholder="Your name"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          type="email"
+          placeholder="Your email"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+        <textarea
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="message"
+          placeholder="Your message"
+        ></textarea>
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="button"
+        >
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function togglePopup() {
+    const popup = document.getElementById('popup');
+    if (popup) {
+      popup.classList.toggle('hidden');
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    const heroText = document.getElementById('hero-text');
+    if (heroText) {
+      if (window.scrollY > 50) {
+        heroText.classList.add('transform', 'scale-75');
+      } else {
+        heroText.classList.remove('transform', 'scale-75');
+      }
+    }
+  });
+</script>
+
+<style>
+  @font-face {
+    font-family: "NeueMontreal-Bold";
+    src:
+      url("/path/to/NeueMontreal-Bold.woff2") format("woff2"),
+      url("/path/to/NeueMontreal-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .hover\:animate-bounce:hover {
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .arrow-icon {
+    filter: invert(60%) sepia(22%) saturate(1023%) hue-rotate(121deg) brightness(93%) contrast(86%);
+  }
+
+  .hover\:bg-[#B488F1]:hover .arrow-icon {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+</style>

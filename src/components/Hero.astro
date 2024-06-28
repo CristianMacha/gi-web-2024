@@ -1,3 +1,6 @@
+---
+const vimeoUrl = 'https://player.vimeo.com/video/971051570?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0'; // URL del video de Vimeo con autoplay, loop y sin controles
+---
 <div class="bg-[#F3F3E9]">
     <div class="px-10 py-56">
         <div class="w-[90wh] text-[#0f1d07]">
@@ -8,11 +11,22 @@
     </div>
     <div class="h-[300vh] relative px-[40px]" id="hero-container-video-main">
         <div class="bg-white rounded-3xl h-screen w-full sticky top-0 flex">
-            <video
+            <!-- <video
                 src="https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2FBORRADOR.mp4?alt=media&token=38cf0da2-215e-4ea6-8b0d-8e11d34470aa"
                 autoplay
                 loop
-                class="w-full h-full rounded-3xl"></video>
+                class="w-full h-full rounded-3xl"></video> -->
+                <div class="vimeo-container">
+                    <iframe 
+                      src={vimeoUrl} 
+                      width="1920" 
+                      height="1080" 
+                      frameborder="0" 
+                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                      title="PORTADA" 
+                      style="border: none;">
+                    </iframe>
+                  </div>
         </div>
     </div>
 </div>
@@ -71,3 +85,17 @@
             duration: 0.1,
         });
 </script>
+<style>
+    .vimeo-container {
+      width: 100%;
+      max-width: 1920px;
+      margin: auto;
+      aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
+      overflow: hidden; /* Oculta cualquier contenido fuera del área del contenedor */
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>

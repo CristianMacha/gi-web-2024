@@ -25,14 +25,39 @@ const urlVideo =
         style="transform: translate(-50%, -50%);"
     >
         
-    <video
+    <!-- <video
     src={video}
     autoplay
     loop
     class="w-full h-full rounded-3xl"
-    preload="auto"></video>
+    preload="auto"></video> -->
+    <div class="vimeo-container">
+        <iframe 
+          src={video} 
+          width="1920" 
+          height="1080" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+          title="PORTADA" 
+          style="border: none;">
+        </iframe>
+      </div>
     </div>
     <div class="sticky bottom-0 py-4 px-4 -mt-16">
         <p class="text-2xl text-white">Curtin Open Day</p>
     </div>
 </div>
+<style>
+    .vimeo-container {
+      width: 100%;
+      max-width: 1920px;
+      margin: auto;
+      aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
+      overflow: hidden; /* Oculta cualquier contenido fuera del área del contenedor */
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>

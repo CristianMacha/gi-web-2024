@@ -1,13 +1,20 @@
 ---
 import { Image } from "astro:assets";
 
+interface Props {
+    video: string;
+    image: string;
+}
+const { video } = Astro.props;
+const { image } = Astro.props;
+
 const urlVideo =
     "https://player.vimeo.com/progressive_redirect/playback/900034563/rendition/720p/file.mp4?loc=external&log_user=0&signature=c432a721e6cae0a23fd4ad3335f5dbd4029c8b4a8d702dc515fdbddd2a6f1fcc";
 ---
 
 <div class="rounded-3xl relative">
     <Image
-        src="https://a-us.storyblok.com/f/1017006/3720x2280/c7c8f88227/curtin-open-landscape-card.jpg/m/3810x2804/filters:quality(80)"
+        src={image}
         width={100}
         height={100}
         alt="Hero"
@@ -17,7 +24,13 @@ const urlVideo =
         class="absolute top-1/2 left-1/2 rounded-3xl overflow-hidden w-[69%]"
         style="transform: translate(-50%, -50%);"
     >
-        <video src={urlVideo} autoplay loop></video>
+        
+    <video
+    src={video}
+    autoplay
+    loop
+    class="w-full h-full rounded-3xl"
+    preload="auto"></video>
     </div>
     <div class="sticky bottom-0 py-4 px-4 -mt-16">
         <p class="text-2xl text-white">Curtin Open Day</p>

@@ -2,17 +2,23 @@
 import BentoItem from "./BentoItem.astro";
 import BentoItemWithVideo from "./BentoItemWithVideo.astro";
 
-const graniteUrlSource = "https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2Fgranite.jpg?alt=media&token=208a54ad-b320-425c-8d46-ae1f63680a6c";
-const quartzUrlSource = "https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2Fquartz.jpg?alt=media&token=cf65efd2-0117-4116-93d6-e19dffaa1ed0";
+const graniteUrlSource = "/images/GRANITE.jpg";
+const quartzUrlSource = "/images/3Z0HCI1ER5eS_8zq79o_LQ.webp";
 ---
 
 <div class="bg-[#b488f1] px-10 py-40">
-    <div class="flex flex-col gap-8">
-        <BentoItemWithVideo />
-        <div class="flex flex-row gap-8">
-            <BentoItem title="Granite" urlSource={graniteUrlSource} />
-            <BentoItem title="Quartz" urlSource={quartzUrlSource} />
-        </div>
-        <BentoItemWithVideo />
+  <div class="flex flex-col gap-8">
+    <BentoItemWithVideo
+      video="https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2FBORRADOR.mp4?alt=media&token=38cf0da2-215e-4ea6-8b0d-8e11d34470aa"
+      image="/images/FONDO.webp"
+    />
+    <div class="flex flex-row gap-48 justify-center items-center">
+      <BentoItem title="Granite" urlSource={graniteUrlSource} />
+      <BentoItem title="Quartz" urlSource={quartzUrlSource} />
     </div>
+    <BentoItemWithVideo
+      video="https://firebasestorage.googleapis.com/v0/b/giv2-6c2ea.appspot.com/o/gi%2FBORRADOR.mp4?alt=media&token=38cf0da2-215e-4ea6-8b0d-8e11d34470aa"
+      image="/images/uDyO-aqHSjiZ4uZ-TEBjKA.webp"
+    />
+  </div>
 </div>

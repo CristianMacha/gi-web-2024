@@ -1,14 +1,91 @@
-<div class="bg-[#b488f1] px-16 py-40">
-    <div class="flex flex-col gap-28">
+---
+import Image from "astro/components/Image.astro"
+---
+<div class="bg-[#b488f1] px-16 py-16">
+    <div class="flex flex-col ">
         <h2 class="text-8xl text-white text-center">
             We design, build and deliver world-class Granite and Quartz
             countertops for forward-thinking homeowners
         </h2>
-        <div class="flex flex-row justify-between flex-wrap text-white">
-            <div>Supplier 1</div>
-            <div>Supplier 2</div>
-            <div>Supplier 3</div>
-            <div>Supplier 4</div>
+        <div class="flex flex-row px-24 py-48 gap-16 justify-between flex-wrap text-white">
+            <Image
+            src="/svg/SUPPLIERS/Architectural-Surfaces-logo.svg"
+            alt="Architectural-Surfaces-logo"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/blanco-sinks.svg"
+            alt="blanco-sinks"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/Caesarstone.svg"
+            alt="Caesarstone"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/cosentino.svg"
+            alt="cosentino"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/daltile.svg"
+            alt="daltile"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/Metroquartz.svg"
+            alt="Metroquartz"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/msi.svg"
+            alt="msi"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/premium-natural-quartz.svg"
+            alt="premium-natural-quartz"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/Silestone.svg"
+            alt="Silestone"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/Sunderlands.svg"
+            alt="Sunderlands"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/Viatera.svg"
+            alt="Viatera"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
+            <Image
+            src="/svg/SUPPLIERS/unique-stone.svg"
+            alt="unique-stone"
+            width={150}
+            height={150}
+            class={'rounded-2xl w-[150px] h-[150px] suppliers-icon'}/>
         </div>
     </div>
 </div>
+<style>
+    .suppliers-icon {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+</style>

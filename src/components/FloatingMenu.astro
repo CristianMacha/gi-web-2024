@@ -1,0 +1,45 @@
+<div class="fixed top-0 py-5 w-full flex justify-center z-10">
+    <div class="py-1 px-2 rounded-full backdrop-blur-sm bg-white/50">
+        <ul class="flex flex-row">
+            <li>
+                <a href="/" class="text-lg tracking-wide active home-route">Home</a>
+            </li>
+            <li>
+                <a href="/about" class="text-lg tracking-wide">About</a>
+            </li>
+            <li>
+                <a href="/services" class="text-lg tracking-wide">Services</a>
+            </li>
+            <li>
+                <a href="/contact" class="text-lg tracking-wide">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<style>
+    a {
+        font-size: .93rem;
+        padding: .19rem .8rem;
+        display: flex;
+        align-items: center;
+    }
+
+    a:hover {
+        background-color: #f1f1f1;
+        color: #0f1d07;
+        border-radius: 20px;
+    }
+
+    .active {
+        background-color: #0f1d07;
+        border-radius: 20px;
+    }
+
+    .active:hover {
+        background-color: #0f1d07;
+    }
+
+    .active.home-route {
+        color: #90f188;
+    }
+</style>

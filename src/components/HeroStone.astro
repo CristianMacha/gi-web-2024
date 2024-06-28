@@ -1,0 +1,29 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    urlImage: string;
+}
+
+const { title, description, urlImage } = Astro.props;
+---
+
+<div
+    class="hero-quartz h-[1000px] md:h-[1500px] lg:h-[2000px] pt-40 lg:pt-48 pb-60 md:pb-80 lg:pb-96 tracking-wide px-4 md:px-8 lg:px-10 flex flex-col justify-between"
+    style={`background-image: url(${urlImage});`}
+>
+    <div>
+        <span class="px-6 py-3 bg-[#b488f1] text-[#12032a] rounded-full font-medium text-lg md:text-xl">Granite</span>
+        <h1 class="font-medium text-white text-7xl md:text-9xl w-full lg:w-[800px] mt-5 md:mt-10 lg:mt-20">{title}</h1>
+    </div>
+    <div>
+        <p class="font-normal text-white text-xl md:text-2xl w-full lg:w-[800px]">{description}</p>
+    </div>
+</div>
+<style>
+    .hero-quartz {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>

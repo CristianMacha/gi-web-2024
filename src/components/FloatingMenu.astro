@@ -1,23 +1,38 @@
 ---
-
+const currentPath = Astro.url.pathname;
+console.log(currentPath);
 ---
 
-<div class="fixed top-0 py-5 w-full flex justify-center z-10">
+<div class="fixed bottom-0 md:bottom-auto top-auto md:top-0 py-5 w-full flex justify-center z-10">
     <div class="py-1 px-2 rounded-full backdrop-blur-sm bg-white/50">
         <ul class="flex flex-row">
             <li>
-                <a href="/" class="text-lg tracking-wide active home-route"
+                <a
+                    href="/"
+                    class={`text-lg tracking-wide home-route ${currentPath === "/" ? "active" : ""}`}
                     >Home</a
                 >
             </li>
             <li>
-                <a href="/granite" class="text-lg tracking-wide">Granite</a>
+                <a
+                    href="/granite"
+                    class={`text-lg tracking-wide granite-route ${currentPath === "/granite" ? "active" : ""}`}
+                    >Granite</a
+                >
             </li>
             <li>
-                <a href="/quartz" class="text-lg tracking-wide">Quartz</a>
+                <a
+                    href="/quartz"
+                    class={`text-lg tracking-wide quartz-route ${currentPath === "/quartz" ? "active" : ""}`}
+                    >Quartz</a
+                >
             </li>
             <li>
-                <a href="/contact" class="text-lg tracking-wide">Contact</a>
+                <a
+                    href="/contact"
+                    class={`text-lg tracking-wide contact-route ${currentPath === "/contact" ? "active" : ""}`}
+                    >Contact</a
+                >
             </li>
         </ul>
     </div>
@@ -47,5 +62,17 @@
 
     .active.home-route {
         color: #90f188;
+    }
+
+    .active.quartz-route {
+        color: #b488f1;
+    }
+
+    .active.granite-route {
+        color: #b488f1;
+    }
+
+    .active.contact-route {
+        color: #f1a788;
     }
 </style>

@@ -1,7 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Catalogs from "../../components/Catalogs.astro";
-import Capabilities from "../../components/Capabilities.astro";
 import HeroStone from "../../components/HeroStone.astro";
 import { Image } from "astro:assets";
 
@@ -29,19 +27,19 @@ const benefits = [
 ];
 ---
 
-<Layout title="Quartz | Granite Impressions">
+<Layout title="Granite | Granite Impressions">
     <main class="bg-[#efe3ff]">
         <HeroStone
             title="Natural Beauty in your Kitchen"
             description="Discover the timeless beauty of granite with our countertops. He Granite not only offers exceptional strength and durability proven, but also a unique variety of patterns and colors that They adapt to any kitchen style."
             urlImage="/images/background-hero-quartz.jpg"
         />
-        <div class="px-40 py-40 flex flex-col gap-12">
-            <h2 class="text-9xl font-medium w-[900px]">Benefits of Granite</h2>
-            <p class="text-2xl font-medium w-[900px]">
+        <div class="px-4 md:px-8 lg:px-40 py-24 md:py-40 flex flex-col gap-12">
+            <h2 class="text-5xl md:text-9xl font-medium w-full lg:w-[900px]">Benefits of Granite</h2>
+            <p class="text-2xl font-medium w-full lg:w-[900px]">
                 Why choose granite for your kitchen
             </p>
-            <div class="grid grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {
                     benefits.map((benefit) => (
                         <div class="flex flex-col gap-5">
@@ -52,34 +50,34 @@ const benefits = [
                 }
             </div>
         </div>
-        <div class="px-10 pt-20">
-            <div class="rounded-3xl p-10 bg-[#ffeedb] flex flex-row gap-10">
+        <div class="px-4 md:px-8 lg:px-10 pt-10 md:pt-20">
+            <div class="rounded-3xl p-10 bg-[#ffeedb] flex flex-col lg:flex-row gap-10">
                 <Image
                     src="https://a-us.storyblok.com/f/1017006/1744x1612/2cca8221bd/unearthed.png/m/667x609/filters:quality(80)"
                     alt="review"
                     width={100}
                     height={100}
-                    class={"w-[400px] h-[400px] rounded-3xl"}
+                    class={"w-full lg:w-[400px] h-auto md:h-[400px] rounded-3xl"}
                 />
-                <div class="text-[#fb5e21] flex flex-col justify-between">
-                    <p class="text-5xl">“They spend the time to understand our business and then solve our challenges with an understanding of our users and top-notch design.”</p>
-                    <span class="text-xl">Zane Prickett</span>
+                <div class="text-[#fb5e21] flex flex-col justify-between gap-10">
+                    <p class="text-3xl md:text-5xl">“They spend the time to understand our business and then solve our challenges with an understanding of our users and top-notch design.”</p>
+                    <span class="text-base md:text-xl">Zane Prickett</span>
                 </div>
             </div>
         </div>
-        <div class="px-10 py-40 flex justify-between items-center">
+        <div class="px-4 md:px-8 lg:px-10 py-20 md:py-40 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 md:gap-20">
             <div class="font-medium flex flex-col gap-2">
-                <h4 class="text-[#b488f1] text-7xl">
+                <h4 class="text-[#b488f1] text-5xl md:text-7xl">
                     Ready to transform your kitchen?
                 </h4>
-                <h5 class="text-5xl">
+                <h5 class="text-4xl md:text-5xl">
                     Contact us today for a free consultation
                 </h5>
             </div>
             <div>
                 <a
                     href="/contact"
-                    class="py-4 px-8 bg-[#b488f1] rounded-full text-5xl font-medium text-[#11052a] hover:bg-[#11052a] hover:text-gray-50"
+                    class="py-4 px-8 bg-[#b488f1] rounded-full text-xl md:text-5xl font-medium text-[#11052a] hover:bg-[#11052a] hover:text-gray-50"
                     >Get in touch</a
                 >
             </div>

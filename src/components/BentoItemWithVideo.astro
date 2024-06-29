@@ -2,62 +2,53 @@
 import { Image } from "astro:assets";
 
 interface Props {
-    video: string;
-    image: string;
+  video: string;
+  image: string;
 }
 const { video } = Astro.props;
 const { image } = Astro.props;
-
-const urlVideo =
-    "https://player.vimeo.com/progressive_redirect/playback/900034563/rendition/720p/file.mp4?loc=external&log_user=0&signature=c432a721e6cae0a23fd4ad3335f5dbd4029c8b4a8d702dc515fdbddd2a6f1fcc";
 ---
 
 <div class="rounded-3xl relative">
-    <Image
-        src={image}
-        width={100}
-        height={100}
-        alt="Hero"
-        class="w-full h-[950px] rounded-3xl"
-    />
-    <div
-        class="absolute top-1/2 left-1/2 rounded-3xl overflow-hidden w-[69%]"
-        style="transform: translate(-50%, -50%);"
-    >
-        
-    <!-- <video
-    src={video}
-    autoplay
-    loop
-    class="w-full h-full rounded-3xl"
-    preload="auto"></video> -->
+  <Image
+    src={image}
+    width={100}
+    height={100}
+    alt="Hero"
+    class="w-full h-[200px] md:h-[950px] rounded-3xl"
+  />
+  <div
+    class="absolute top-1/2 left-1/2 rounded-3xl overflow-hidden w-[69%] "
+    style="transform: translate(-50%, -50%);"
+  >
     <div class="vimeo-container">
-        <iframe 
-          src={video} 
-          width="1920" 
-          height="1080" 
-          frameborder="0" 
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-          title="PORTADA" 
-          style="border: none;">
-        </iframe>
-      </div>
+      <iframe
+        src={video}
+        width="1920"
+        height="1080"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+        title="PORTADA"
+        style="border: none;"
+      >
+      </iframe>
     </div>
-    <div class="sticky bottom-0 py-4 px-4 -mt-16">
-        <p class="text-2xl text-white">Curtin Open Day</p>
-    </div>
+  </div>
+  <div class="sticky bottom-0 py-4 px-4 -mt-16">
+    <p class="text-2xl text-white">Curtin Open Day</p>
+  </div>
 </div>
 <style>
-    .vimeo-container {
-      width: 100%;
-      max-width: 1920px;
-      margin: auto;
-      aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
-      overflow: hidden; /* Oculta cualquier contenido fuera del área del contenedor */
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+  .vimeo-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>

@@ -9,12 +9,12 @@ interface Props {
 const { title, urlSource } = Astro.props;
 ---
 
-<div class="rounded-3xl relative h-[960px] w-full">
+<div class="rounded-3xl relative h-[500px] md:h-[960px] w-screen md:w-full">
     <Image
         src={urlSource}
         width={100}
         height={100}
-        class="w-full h-full rounded-3xl"
+        class="w-screen h-[500px] md:w-full md:h-full rounded-3xl"
         style="object-fit: cover;"
         alt={title}
     />

@@ -3,25 +3,148 @@ import Edge from "./Edge.astro";
 ---
 
 <div class="px-10 py-40 bg-[#f3f3e9]">
-    <h2 class="text-6xl text-[#101e08] font-medium">Edge Upgrade</h2>
-    <div class="flex flex-row gap-8 flex-wrap mt-8">
-        <Edge
-        image="/images/1-4-BEVEL-EDGE.jpg"
-        title="1/4 BEVEL EDGE" />
-        <Edge
-        image="/images/1-4-ROUND-EDGE.jpg"
-        title="1/4 ROUNDEDGE" />
-        <Edge
-        image="/images/EASED-EDGE.jpg"
-        title="EASED EDGE" />
-        <Edge
+  <h2 class="text-6xl text-[#101e08] font-medium">Edge Upgrade</h2>
+  <!-- Contenedor principal de Swiper -->
+  <div class="swiper">
+    <!-- Wrapper adicional requerido -->
+    <div class="swiper-wrapper" id="my-slider">
+      <!-- Los slides -->
+      <a
+        class="swiper-slide"
+        href="/images/1-4-BEVEL-EDGE.jpg"
+        data-pswp-width="800"
+        data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+        <Edge image="/images/1-4-BEVEL-EDGE.jpg" title="1/4 BEVEL EDGE" />
+      </a>
+      <a
+        class="swiper-slide"
+        href="/images/1-4-ROUND-EDGE.jpg"
+        data-pswp-width="800"
+        data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+        <Edge image="/images/1-4-ROUND-EDGE.jpg" title="1/4 ROUNDEDGE" />
+      </a>
+      <a
+        class="swiper-slide"
+        href="/images/image3.jpeg"
+        data-pswp-width="800"
+        data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+      <Edge image="/images/EASED-EDGE.jpg" title="EASED EDGE" />
+      </a>
+      <a
+        class="swiper-slide"
+        href="/images/image4.jpeg"
+        data-pswp-width="800"
+        data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+      <Edge
         image="/images/FULL-BULLNOSE-EDGE.jpg"
-        title="FULL BULLNOSE EDGE" />
-        <Edge
+        title="FULL BULLNOSE EDGE"
+      />
+      </a>
+      <a
+        class="swiper-slide"
+        href="/images/image4.jpeg"
+        data-pswp-width="800"
+        data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+      <Edge
         image="/images/HALF-BULLNOSE-EDGE.jpg"
-        title="HALF BULLNOSE EDGE" />
-        <Edge
-        image="/images/OGEE-EDGE.jpg"
-        title="OGEE EDGE" />
+        title="HALF BULLNOSE EDGE"
+      />
+      </a>
+      <a
+        class="swiper-slide"
+        href="/images/image4.jpeg"
+        data-pswp-width="800"
+        data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+      <Edge
+        image="/images/HALF-BULLNOSE-EDGE.jpg"
+        title="HALF BULLNOSE EDGE"
+      />
+      </a>
     </div>
+    <!-- Botones de navegación -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 </div>
+<script>
+  // Core de Swiper y estilos
+  import Swiper from "swiper";
+  import "swiper/css";
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from "swiper/modules";
+  import "swiper/css/navigation";
+
+  // Configurar Swiper
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation],
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+    navigation: {
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
+    },
+  });
+</script>
+<style>
+  .swiper-slide {
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 768px) {
+    .swiper-slide {
+      width: 70%; /* Útil si la propiedad slidesPerView es "auto" */
+      height: 400px;
+    }
+    .swiper-button-next,.swiper-button-prev {
+      background-image: url("/svgs/arrow-next.svg");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      width: 60px;
+      height: 60px;
+    }
+    .swiper-button-prev {
+      transform: rotate(
+        180deg
+      ); /* rotar arrow-next.svg para reutilizar el mismo icono*/
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      content: "";
+    }
+  }
+</style>
